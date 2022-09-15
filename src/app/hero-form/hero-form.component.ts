@@ -12,9 +12,36 @@ export class HeroFormComponent {
 
 	model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
 
-	submitting = false;
-
+	submitted = false;
+	
 	onSubmit() {
-		this.submitting = true;
+		this.submitted = true;
 	}
+
+	newHero(): Hero {
+		return this.model = new Hero(42, '', '')
+	}
+
+	skyDog(): Hero {
+		const myHero = new Hero(
+			42,
+			'SkyDog',
+			'Fetch any object at any distance',
+			'Leslie Rollover'
+		);
+	
+		console.log('My Hero is called ' + myHero.name)
+		return myHero
+	}
+
+	//////// NOT SHOWN IN DOCS ////////
+
+  // Reveal in html:
+  //   Name via form.controls = {{showFormControls(heroForm)}}
+  showFormControls(form: any) {
+    return form && form.controls.name &&
+    form.controls.name.value; // Dr. IQ
+  }
+
+  /////////////////////////////
 }
