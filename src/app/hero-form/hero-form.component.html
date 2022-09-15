@@ -1,0 +1,7 @@
+<h1>Hero Form</h1>
+<div class="form-gorup">
+	<label for="power">Hero Power</label>
+	<select class="form-control" id="power" required>
+		<option *ngFor="let pow of powers" [value]="pow">{{ pow }}</option>
+	</select>
+</div>
